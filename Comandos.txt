@@ -1,0 +1,161 @@
+ # Maximizar a tela
+pyautogui.click(971,69)
+    # Selecionar e Digitar o Processo
+pyautogui.click(23,81,duration=2) 
+pyautogui.write(Nr_Processo)
+pyautogui.click(1291,249,duration=2)
+    #Selecionar Aba Andamento
+pyautogui.click(261,32,duration=2)
+    #Inserir o Andamento
+pyautogui.click(1097,704,duration=2)
+    #Data da Plublicação
+pyautogui.click(13,78,duration=2)
+pyautogui.write(Dt_Publicacao)
+    # Ato Processual
+pyautogui.click(37,157,duration=2)
+pyautogui.write(Ato_Pocessual)
+    # Andamento
+pyautogui.click(11,227,duration=2)
+pyautogui.write(Andamento)
+pyautogui.click(1159,704,duration=2)
+pyautogui.sleep
+
+  # Maximizar a tela
+    pyautogui.click(971,69)
+    # Selecionar e Digitar o Processo
+    pyautogui.click(23,81,duration=2) 
+    pyautogui.write(Nr_Processo)
+    pyautogui.click(1291,249,duration=2)
+    #Selecionar Aba Andamento
+    pyautogui.click(261,32,duration=2)
+    #Inserir o Andamento
+    pyautogui.click(1097,704,duration=2)
+    #Data da Plublicação
+    pyautogui.click(13,78,duration=2)
+    pyautogui.write(Dt_Publicacao)
+    # Ato Processual
+    pyautogui.click(37,157,duration=2)
+    pyautogui.write(Ato_Pocessual)
+    # Andamento
+    pyautogui.click(11,227,duration=2)
+    pyautogui.write(Andamento)
+    pyautogui.click(1159,704,duration=2)
+    # Selecionar e Digitar o Processo
+    pyautogui.click(23,81,duration=2) 
+    pyautogui.write(Nr_Processo)
+    pyautogui.click(1291,249,duration=2)
+
+    pyautogui.click(1291, 249, duration=2)
+     # Selecionar Aba Andamento
+     pyautogui.click(261, 32, duration=2)
+     # Inserir o Andamento
+     pyautogui.click(1113, 708, duration=2)
+     # Data da Plublicação
+     pyautogui.click(13, 78, duration=2)
+     pyautogui.write(DT_Publicacao)
+     pyautogui.click(37, 157, duration=2)
+     pyautogui.write(Ato_Processual)
+     # Andamento
+     pyautogui.click(11, 227, duration=2)
+     pyautogui.write(Andamento)
+     pyautogui.click(1163, 704, duration=2)
+     sleep(2)
+     pyautogui.click(26,34, duration=2)
+     pyautogui.click(23, 81, duration=2)
+
+      # Selecionar e Digitar o Processo
+               if not self.find( "Processo", matching=0.97, waiting_time=10000):
+                   self.not_found("Processo")
+               if not self.find( "Processo_Text", matching=0.97, waiting_time=10000):
+                   self.not_found("Processo_Text")
+                   self.click()
+                   self.paste(NR_Processo)
+               if not self.find( "Pesquisar", matching=0.97, waiting_time=10000):
+                   self.not_found("Pesquisar")
+                   self.click()  
+               if not self.find( "Andamento", matching=0.97, waiting_time=10000):
+                    self.not_found("Andamento")
+                    self.click() 
+
+def new_func():
+     pyautogui.press('backspace',presses=20)
+     pyautogui.click(972,69)  
+     pyautogui.click(42,78)
+     pyautogui.write(NR_Processo)  
+     pyautogui.click(1305,313)
+     time.sleep(2)
+     pyautogui.click(597,31)
+     time.sleep(2)
+     pyautogui.click(26,32)
+     time.sleep(2)
+     pyautogui.click(122,76)  
+     new_func()
+     time.sleep(2)
+     pyautogui.write(NR_Processo) 
+
+     SELECT DISTINCT * FROM SAPC.PROCESSO
+INNER JOIN SAPC.TIPO_ACAO ON (SAPC.PROCESSO.CO_TIPO_ACAO = SAPC.TIPO_ACAO.CODIGO)
+WHERE
+
+ valor_principal_element = driver.find_element(By.XPATH, "//span[@id='consultaDebitoForm:detalharDebito']//div[@id='consultaDebitoForm:j_id1113']//div[@id='consultaDebitoForm:j_id1113_body']//tr[contains(@class,'rich-table-row')]//td[@id='consultaDebitoForm:j_id1114:0:j_id1122']")
+    valor_principal= valor_principal_element.find_element(By.TAG_NAME, "class").text
+    sleep(5)
+
+    valor_juros_element = driver.find_element(By.XPATH, "//span[@id='consultaDebitoForm:detalharDebito']//div[@id='consultaDebitoForm:j_id1113']//div[@id='consultaDebitoForm:j_id1113_body']//tr[contains(@class,'rich-table-row')]//td[@id='consultaDebitoForm:j_id1114:2:j_id1122']")
+    valor_juros= valor_juros_element.find_element(By.TAG_NAME, "class").text
+    sleep(5)
+
+    valor_multa_element = driver.find_element(By.XPATH, "//span[@id='consultaDebitoForm:detalharDebito']//div[@id='consultaDebitoForm:j_id1113']//div[@id='consultaDebitoForm:j_id1113_body']//tr[contains(@class,'rich-table-row')]//td[@id='consultaDebitoForm:j_id1114:3:j_id1122']")
+    valor_multa= valor_multa_element.find_element(By.TAG_NAME, "class").text
+    sleep(5)
+
+    valor_honorarios_element = driver.find_element(By.XPATH, "//span[@id='consultaDebitoForm:detalharDebito']//div[@id='consultaDebitoForm:j_id1113']//div[@id='consultaDebitoForm:j_id1113_body']//tr[contains(@class,'rich-table-row')]//td[@id='consultaDebitoForm:j_id1114:3:j_id1122']")
+    valor_honorarios= valor_honorarios_element.find_element(By.TAG_NAME, "class").text
+    sleep(5)
+    
+    valor_mora_multa_element = driver.find_element(By.XPATH, "//span[@id='consultaDebitoForm:detalharDebito']//div[@id='consultaDebitoForm:j_id1113']//div[@id='consultaDebitoForm:j_id1113_body']//tr[contains(@class,'rich-table-row')]//td[@id='consultaDebitoForm:j_id1114:5:j_id1122']")
+    valor_mora_multa= valor_mora_multa_element.find_element(By.TAG_NAME, "class").text
+    sleep(5)
+
+    # Caminho para o PDF gerado
+pdf_folder = 'C://Users//walter.oliveira//Downloads//'
+
+# Listar todos os arquivos na pasta
+pdf_files = [os.path.join(pdf_folder, f) for f in os.listdir(pdf_folder) if f.endswith('.pdf')]
+
+# Configurações do servidor de e-mail
+smtp_server = 'smtp.office365.com'  # Exemplo para o Gmail
+smtp_port = 587
+smtp_username = 'workflow@bicharalaw.com.br'
+smtp_password = '#W0rkF10w#'
+
+# Endereço de e-mail de destino
+to_email = 'flavio.sousa@bicharalaw.com.br'
+
+# Crie uma mensagem de e-mail
+msg = MIMEMultipart()
+msg['From'] = smtp_username
+msg['To'] = to_email
+msg['Subject'] = 'Assunto do E-mail'
+
+# Adicione o corpo do e-mail (opcional)
+email_body = 'Corpo do e-mail.'
+msg.attach(MIMEText(email_body, 'plain'))
+
+# Anexe todos os PDFs encontrados na pasta
+for pdf_path in pdf_files:
+    with open(pdf_path, 'rb') as pdf_file:
+        pdf_attach = MIMEApplication(pdf_file.read(), _subtype="pdf")
+        pdf_attach.add_header('Content-Disposition', 'attachment', filename=os.path.basename(pdf_path))
+        msg.attach(pdf_attach)
+
+# Conecte-se ao servidor de e-mail e envie o e-mail
+try:
+    server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(smtp_username, smtp_password)
+    server.sendmail(smtp_username, to_email, msg.as_string())
+    server.quit()
+    print('E-mail com anexos enviados com sucesso.')
+except Exception as e:
+    print('Erro ao enviar o e-mail:', str(e))

@@ -1,0 +1,131 @@
+Sub InserirHiperlink()
+    If ActiveDocument.SelectContentControlsByTitle("checkBox")(1).Checked = True Then
+        Dim hyperlinkAddress As String
+        hyperlinkAddress = "http://www.exemplo.com"
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = "Meu hiperlink"
+        ActiveDocument.Hyperlinks.Add Anchor:=ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range, Address:=hyperlinkAddress
+    Else
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = ""
+        ActiveDocument.Hyperlinks.Delete
+    End If
+End Sub
+
+Sub CheckBoxChange()
+    Dim checkBox As ContentControl
+    Set checkBox = ActiveDocument.SelectContentControlsByTitle("checkBox")(1)
+    
+    If checkBox.Checked = True Then
+        Dim hyperlinkAddress As String
+        hyperlinkAddress = "http://www.exemplo.com"
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = "Meu hiperlink"
+        ActiveDocument.Hyperlinks.Add Anchor:=ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range, Address:=hyperlinkAddress
+    Else
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = ""
+        ActiveDocument.Hyperlinks.Delete
+    End If
+End Sub
+
+Private Sub CheckBoxChange()
+    Dim checkBox As ContentControl
+    Set checkBox = ActiveDocument.SelectContentControlsByTitle("CheckProposta")(1)
+    
+    If checkBox.Checked = True Then
+        Dim hyperlinkAddress As String
+        hyperlinkAddress = "https://form.jotform.com/231735345021649"
+        
+        Dim placeholderRange As Range
+        Set placeholderRange = ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range
+        placeholderRange.Text = "Proposta Aceita"
+        
+        Dim hyperlinkRange As Range
+        Set hyperlinkRange = ActiveDocument.Range(placeholderRange.Start, placeholderRange.End)
+        ActiveDocument.Hyperlinks.Add Anchor:=hyperlinkRange, Address:=hyperlinkAddress
+    Else
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = "Proposta Aceita"
+        'ActiveDocument.Hyperlinks.Delete
+    End If
+End Sub
+
+
+Sub CheckBoxChange()
+    Dim checkBox As ContentControl
+    Set checkBox = ActiveDocument.SelectContentControlsByTitle("CheckProposta")(1)
+    
+    If checkBox.Checked = True Then
+        Dim hyperlinkAddress As String
+        hyperlinkAddress = "https://form.jotform.com/231735345021649"
+        
+        Dim placeholderRange As Range
+        Set placeholderRange = ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range
+        placeholderRange.Text = "Proposta Aceita"
+        
+        Dim hyperlinkRange As Range
+        Set hyperlinkRange = ActiveDocument.Range(placeholderRange.Start, placeholderRange.End)
+        
+        ActiveDocument.Hyperlinks.Add Anchor:=hyperlinkRange, Address:=hyperlinkAddress, TextToDisplay:="Link"
+    Else
+        ActiveDocument.SelectContentControlsByTitle("hiperlinkPlaceholder")(1).Range.Text = "Proposta Rejeitada"
+        'ActiveDocument.Hyperlinks.Delete
+    End If
+End Sub
+
+
+Sub InserirHyperlinkNoCheckBox()
+    ' Defina o texto do hyperlink e o endereço do link
+    Dim textoDoHyperlink As String
+    Dim enderecoDoHyperlink As String
+    textoDoHyperlink = "Clique aqui para visitar o exemplo"
+    enderecoDoHyperlink = "https://www.exemplo.com"
+    
+    ' Selecione o checkbox onde deseja inserir o hyperlink
+    Dim checkbox As CheckBox
+    Set checkbox = ActiveDocument.SelectContentControlsByTitle("NomeDoCheckBox")(1).CheckBox
+    
+    ' Inserir o hyperlink no checkbox
+    ActiveDocument.Hyperlinks.Add Anchor:=checkbox.Range, Address:=enderecoDoHyperlink, _
+        SubAddress:="", ScreenTip:="", TextToDisplay:=textoDoHyperlink
+End Sub
+
+Private Sub CheckBox1_Click()
+    ' Defina o texto do hyperlink e o endereço do link
+    Dim textoDoHyperlink As String
+    Dim enderecoDoHyperlink As String
+    textoDoHyperlink = "Clique aqui para visitar o exemplo"
+    enderecoDoHyperlink = "https://www.exemplo.com"
+    
+    ' Verifique se o checkbox está marcado
+    If CheckBox1.Value = True Then
+        ' Adicione o hyperlink
+        Dim rng As Range
+        Set rng = CheckBox1.Parent.Range
+        ActiveDocument.Hyperlinks.Add Anchor:=rng, Address:=enderecoDoHyperlink, TextToDisplay:=textoDoHyperlink
+    Else
+        ' Remova o hyperlink
+        Dim hlink As Hyperlink
+        For Each hlink In ActiveDocument.Hyperlinks
+            If hlink.Range.InRange(CheckBox1.Parent.Range) Then
+                hlink.Delete
+                Exit For
+            End If
+        Next hlink
+    End If
+End Sub
+
+Private Sub CheckBox1_Click()
+    ' Defina o texto do hyperlink e o endereço do link
+    Dim textoDoHyperlink As String
+    Dim enderecoDoHyperlink As String
+    textoDoHyperlink = "Clique aqui para visitar o exemplo"
+    enderecoDoHyperlink = "https://www.exemplo.com"
+    
+    ' Verifique se o checkbox está marcado
+    If CheckBox1.Value = True Then
+        ' Adicione o hyperlink
+        ActiveDocument.Hyperlinks.Add Anchor:=CheckBox1.Range, Address:=enderecoDoHyperlink, TextToDisplay:=textoDoHyperlink
+    Else
+        ' Remova o hyperlink
+        CheckBox1.Range.Hyperlinks(1).Delete
+    End If
+End Sub
+
+

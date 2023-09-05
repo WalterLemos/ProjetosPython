@@ -1,0 +1,9 @@
+SELECT sapc.processo.processo1 AS Num_Processo, 
+       sapc.andamento.data_andamento AS Dt_Andamento,
+       sapc.andamento.data_inclusao,
+       sapc.andamento.andamento, 
+       sapc.andamento.usuario_inc 
+FROM sapc.andamento
+INNER JOIN sapc.processo ON sapc.processo.cod_interno = sapc.andamento.cod_interno
+WHERE sapc.andamento.data_andamento >= TO_DATE('15/04/2023' , 'DD/MM/YYYY') OR sapc.andamento.data_andamento =< TO_DATE('28/04/2023' , 'DD/MM/YYYY')
+AND sapc.andamento.usuario_inc = 'RAN'
